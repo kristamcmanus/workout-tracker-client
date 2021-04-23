@@ -1,6 +1,6 @@
 # VARIABLE=VALUE sh curl-scripts/auth/sign-up.sh
 
-curl "http://localhost:4741/sign-up" \
+curl "https://safe-headland-27184.herokuapp.com" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \
