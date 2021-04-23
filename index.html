@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Workout Tracker</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,183 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <h3>Workout Tracker</h3>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#add-workout">Add Workout</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#view-all-workouts">View All Workouts</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#change-password">Change Password</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#sign-out" type="submit">Sign Out</a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li> -->
+              <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li> -->
+              <!-- <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li> -->
+            </ul>
+            <!-- <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form> -->
+          </div>
+        </div>
+      </nav>
+
+      <!-- display messages -->
+      <div id="messages"></div>
+
+      <!-- sign out button -->
+      <button id="sign-out">Sign Out</button>
+
+      <!-- sign up form -->
+
+      <div id="container">
+        <form id="sign-up">
+          <h3>Sign Up</h3>
+          <label for="email">Email: </label>
+          <input name="credentials[email]" type="email" placeholder="jdoe@gmail.com" required>
+          <label for="password">Password: </label>
+          <input name="credentials[password]" type="password" placeholder="password" required>
+          <label for="password">Confirm Password: </label>
+          <input name="credentials[password_confirmation]" type="password" placeholder="confirm password" required>
+          <button type="submit" class="reg-button">Submit</button>
+        </form>
+
+        <!-- sign in form -->
+        <form id="sign-in">
+          <h3>Sign In</h3>
+          <label for="email">Email: </label>
+          <input name="credentials[email]" type="email" placeholder="jdoe@gmail.com" required>
+          <label for="password">Password: </label>
+          <input name="credentials[password]" type="password" placeholder="password" required>
+          <button type="submit" class="reg-button">Submit</button>
+        </form>
+      </div>
+
+      <!-- change password form -->
+      <form id="change-password">
+        <h3>Change Password</h3>
+        <br>
+        <label for="password">Old Password: </label>
+        <input type="password" name="passwords[old]" placeholder="old password" required>
+        <br>
+        <label for="password">New Password: </label>
+        <input type="password" name="passwords[new]" placeholder="new password" required>
+        <br>
+        <button type="submit">Submit</button>
+      </form>
+
+      <form id="add-workout" class="row g-3">
+        <h3>Add Workout</h3>
+        <!-- <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Email</label>
+          <input type="email" class="form-control" id="inputEmail4">
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Password</label>
+          <input type="password" class="form-control" id="inputPassword4">
+        </div> -->
+        <div class="col-12">
+          <label for="inputName" class="form-label">Name</label>
+          <input type="text" class="form-control" id="inputName" placeholder="Run">
+        </div>
+        <div class="col-12">
+          <label for="inputDescription" class="form-label">Description</label>
+          <input type="text" class="form-control" id="inputDescription" placeholder="Run around neighborhood">
+        </div>
+        <div class="col-md-6">
+          <label for="inputDuration" class="form-label">Duration (in minutes)</label>
+          <input type="text" class="form-control" id="inputDuration" placeholder="45">
+        </div>
+        <div class="col-md-6">
+          <label for="inputDate" class="form-label">Date</label>
+          <input type="text" class="form-control" id="inputDate" placeholder="04-22-2021">
+        </div>
+        <!-- <div class="col-md-4">
+          <label for="inputState" class="form-label">State</label>
+          <select id="inputState" class="form-select">
+            <option selected>Choose...</option>
+            <option>...</option>
+          </select>
+        </div> -->
+        <!-- <div class="col-md-2">
+          <label for="inputZip" class="form-label">Zip</label>
+          <input type="text" class="form-control" id="inputZip">
+        </div> -->
+        <!-- <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+              Check me out
+            </label>
+          </div>
+        </div> -->
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Sign in</button>
+        </div>
+      </form>
+
+      <table id="all-workouts-table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Duration</th>
+            <th scope="col">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+            <td>@mdo</td>
+          </tr>
+        </tbody>
+      </table>
+
     </body>
 </html>
