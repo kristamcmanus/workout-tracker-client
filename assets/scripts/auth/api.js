@@ -52,9 +52,22 @@ const addWorkout = function (formData) {
   })
 }
 
+const allWorkoutsTable = function (formData) {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/workouts',
+    data: formData,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut,
+  addWorkout,
+  allWorkoutsTable
 }

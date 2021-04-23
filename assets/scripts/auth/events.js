@@ -49,6 +49,7 @@ const onAddWorkout = function () {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
+  console.log(formData)
   // console.log(formData)
   api.addWorkout()
     .then(ui.onAddWorkoutSuccess)
@@ -60,7 +61,7 @@ const onAllWorkoutsTable = function () {
   const form = event.target
   const formData = getFormFields(form)
   // console.log(formData)
-  api.AllWorkoutsTable()
+  api.allWorkoutsTable()
     .then(ui.onAddWorkoutSuccess)
     .catch(ui.onError)
 }

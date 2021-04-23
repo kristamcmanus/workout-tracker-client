@@ -20,6 +20,8 @@ const onSignInSuccess = function (response) {
   $('#sign-up').hide()
   $('#sign-in').hide()
   $('#sign-in').trigger('reset')
+  $('#add-workout').show()
+  $('#all-workouts-table').show()
 }
 
 const onChangePasswordSuccess = function () {
@@ -34,22 +36,29 @@ const onSignOutSuccess = function () {
   $('#sign-up').show()
   $('#sign-in').show()
   $('.navbar').hide()
+  $('#add-workout').hide()
+  $('#all-workouts-table').hide()
   store.user = null
 }
 
-const onNavbarSuccess = function () {
-  $('#add-workout').show()
-}
+// const onNavbarSuccess = function () {
+//   $('#add-workout').show()
+// }
 
 const onAddWorkoutSuccess = function () {
-  // store.user = response.user
+  store.workout = response.workout
+  const workoutHTML = `
+  <p>Name: ${response.workout.name}</p>
+  <p>Description: ${response.workout.description}</p>
+  <p>Duration: ${response.workout.duration}<p>
+  <p>Date: ${response.workout.date}</p>
+  `
   $('#messages').text('Successfully added workout!')
   $('#add-workout').show()
   $('#add-workout').trigger('reset')
 }
 
 const onAllWorkoutsTableSuccess = function () {
-  // store.user = response.user
   $('#messages').text('You can now view all workouts!')
   $('#all-workouts-table').show()
 }
