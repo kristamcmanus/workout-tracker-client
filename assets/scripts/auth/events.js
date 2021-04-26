@@ -45,32 +45,9 @@ const onSignOut = function () {
     .catch(ui.onError)
 }
 
-const onAddWorkout = function () {
-  event.preventDefault()
-  const form = event.target
-  const formData = getFormFields(form)
-  console.log(formData)
-  // console.log(formData)
-  api.addWorkout()
-    .then(ui.onAddWorkoutSuccess)
-    .catch(ui.onError)
-}
-
-const onAllWorkoutsTable = function () {
-  event.preventDefault()
-  const form = event.target
-  const formData = getFormFields(form)
-  // console.log(formData)
-  api.allWorkoutsTable()
-    .then(ui.onAddWorkoutSuccess)
-    .catch(ui.onError)
-}
-
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
-  onSignOut,
-  onAddWorkout,
-  onAllWorkoutsTable
+  onSignOut
 }

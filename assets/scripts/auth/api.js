@@ -41,33 +41,9 @@ const signOut = function () {
   })
 }
 
-const addWorkout = function (formData) {
-  return $.ajax({
-    method: 'POST',
-    url: config.apiUrl + '/workouts',
-    data: formData,
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    }
-  })
-}
-
-const allWorkoutsTable = function (formData) {
-  return $.ajax({
-    method: 'GET',
-    url: config.apiUrl + '/workouts',
-    data: formData,
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    }
-  })
-}
-
 module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut,
-  addWorkout,
-  allWorkoutsTable
+  signOut
 }

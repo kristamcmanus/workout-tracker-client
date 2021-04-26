@@ -5,22 +5,34 @@
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
-const events = require('./auth/events')
+const authEvents = require('./auth/events')
+const workoutEvents = require('./workout/events')
 
 $(() => {
-  $('#change-password').hide()
+
+  // auth
   $('#sign-out').hide()
-  $('#sign-up').on('submit', events.onSignUp)
-  $('#sign-in').on('submit', events.onSignIn)
-  $('#change-password').on('submit', events.onChangePassword)
-  $('#sign-out').on('click', events.onSignOut)
-  // $('.navbar').on('click', events.onSignIn)
-  // $('.navbar').hide()
-  $('#all-workouts-table').on('click', events.onAllWorkoutsTable)
+  $('#sign-up').on('submit', authEvents.onSignUp)
+  $('#sign-in').on('submit', authEvents.onSignIn)
+  $('#change-password').hide()
+  $('#change-password').on('submit', authEvents.onChangePassword)
+  $('#sign-out').on('click', authEvents.onSignOut)
+
+  // workouts
+  $('.navbar').on('click', workoutEvents.onNavbar)
+  $('.navbar').hide()
   // $('#add-workout').on('click', events.onNavbarSuccess)
-  $('#add-workout').on('click', events.onAddWorkout)
   $('#add-workout').hide()
-  // $('#add-workout').on('click', events.onSignIn)
-  $('#all-workouts-table').hide()
-  // $('#all-workouts-table').on('click', events.onSignIn)
+  $('#add-workout').on('submit', workoutEvents.onAddWorkout)
+  $('#add-workout-btn').on('click', workoutEvents.onAddWorkoutBtn)
+  // $('#view-edit-delete').hide()
+  // $('#view-edit-delete').on('click', workoutEvents.onViewEditDelete)
+  $('#view-all-workouts').hide()
+  $('#view-all-workouts').on('click', workoutEvents.onViewAllWorkouts)
+  $('#edit-workout').hide()
+  $('#edit-workout').on('submit', workoutEvents.onEditWorkout)
+  $('#delete-workout').hide()
+  $('#delete-workout').on('submit', workoutEvents.onDeleteWorkout)
+  $('#display-workouts').on('click', workoutEvents.onViewAllWorkoutsSuccess)
+  $('#change-pw-btn').on('click', workoutEvents.onChangePwBtn)
 })
