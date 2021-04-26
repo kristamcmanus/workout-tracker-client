@@ -1,1 +1,76 @@
 @import '~bootstrap/scss/bootstrap';
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+// .nav-item {
+//   display: flex;
+//   justify-content: space-around;
+// }
+
+.navbar {
+  background-color: #85F0FF;
+}
+
+.navbar-nav {
+  color: white;
+}
+
+// form {
+//   display: grid;
+//   justify-content: center;
+//   align-items: center;
+//   width: 100%;
+// }
+
+// #add-workout {
+//   display: grid;
+//   justify-content: center;
+//   align-items: center;
+//   // width: 100%;
+// }
+//
+// .center-item {
+//   display: grid;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+// .div-wrapper {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   width: 50%;
+// }
+
+// .form-control {
+//   display: block;
+//   width: 50%;
+// }
+
+// .div-wrapper {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+button {
+	color: #000;
+	background-color: #FFF;
+	border: 2px solid #85F0FF;
+	border-radius: 5px;
+	padding: 8px 28px;
+	font-size: 14px;
+	letter-spacing: 1px;
+	cursor: pointer;
+	box-shadow: inset 0 0 0 0 #85F0FF;
+	-webkit-transition: ease-out 0.4s;
+	-moz-transition: ease-out 0.4s;
+	transition: ease-out 0.4s;
+	&:hover {
+		box-shadow: inset 400px 0 0 0 #85F0FF;
+	}
+}
