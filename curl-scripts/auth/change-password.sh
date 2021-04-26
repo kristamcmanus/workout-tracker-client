@@ -1,4 +1,4 @@
-curl "https://safe-headland-27184.herokuapp.com/change-password" \
+curl "http://localhost:4741/workouts" \
   --include \
   --request PATCH \
   --header "Authorization: Bearer ${TOKEN}" \

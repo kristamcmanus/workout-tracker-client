@@ -1,4 +1,4 @@
-curl "https://safe-headland-27184.herokuapp.com/sign-in" \
+curl "http://localhost:4741/workouts" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \
