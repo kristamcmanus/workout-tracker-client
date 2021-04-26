@@ -1,4 +1,4 @@
-API="http://localhost:4741"
+API="https://safe-headland-27184.herokuapp.com"
 URL_PATH="/workouts"
 
 curl "${API}${URL_PATH}/${ID}" \
