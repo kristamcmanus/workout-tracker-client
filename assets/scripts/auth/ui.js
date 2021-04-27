@@ -24,9 +24,9 @@ const onSignInSuccess = function (response) {
   $('#sign-in').trigger('reset')
   $('#edit-workout').show()
   $('#delete-workout').show()
-  $('#view-all-workouts').hide()
-  $('#display-workouts').hide()
-  $('#view-edit-delete').hide()
+  $('#view-all-workouts').show()
+  $('#display-workouts').show()
+  $('#view-edit-delete').show()
 }
 
 const onChangePasswordSuccess = function () {

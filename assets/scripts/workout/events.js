@@ -48,18 +48,18 @@ const onViewAllWorkouts = function () {
 const onChangePwBtn = function (event) {
   $('#change-password').show()
   $('#add-workout').hide()
+  $('#display-workouts').hide()
   $('#view-edit-delete').hide()
   $('#view-all-workouts').hide()
-  $('#display-workouts').hide()
 }
 
 // add workout link in navbar displays `add workout` form on page
 const onAddWorkoutBtn = function (event) {
   $('#add-workout').show()
   $('#change-password').hide()
+  $('#display-workouts').hide()
   $('#view-edit-delete').hide()
   $('#view-all-workouts').hide()
-  $('#display-workouts').hide()
 }
 
 // view all workouts link in navbar displays edit and delete forms and view all
