@@ -16777,9 +16777,9 @@ var onSignInSuccess = function onSignInSuccess(response) {
   $('#sign-in').trigger('reset');
   $('#edit-workout').show();
   $('#delete-workout').show();
-  $('#view-all-workouts').hide();
-  $('#display-workouts').hide();
-  $('#view-edit-delete').hide();
+  $('#view-all-workouts').show();
+  $('#display-workouts').show();
+  $('#view-edit-delete').show();
 };
 
 var onChangePasswordSuccess = function onChangePasswordSuccess() {
@@ -16910,18 +16910,18 @@ var onViewAllWorkouts = function onViewAllWorkouts() {
 var onChangePwBtn = function onChangePwBtn(event) {
   $('#change-password').show();
   $('#add-workout').hide();
+  $('#display-workouts').hide();
   $('#view-edit-delete').hide();
   $('#view-all-workouts').hide();
-  $('#display-workouts').hide();
 };
 
 // add workout link in navbar displays `add workout` form on page
 var onAddWorkoutBtn = function onAddWorkoutBtn(event) {
   $('#add-workout').show();
   $('#change-password').hide();
+  $('#display-workouts').hide();
   $('#view-edit-delete').hide();
   $('#view-all-workouts').hide();
-  $('#display-workouts').hide();
 };
 
 // view all workouts link in navbar displays edit and delete forms and view all
