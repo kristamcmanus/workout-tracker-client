@@ -44,21 +44,33 @@ const onViewAllWorkouts = function () {
     .catch(ui.onError)
 }
 
+// change password link in navbar displays `change password` form on page
 const onChangePwBtn = function (event) {
-  event.preventDefault()
   $('#change-password').show()
+  $('#add-workout').hide()
+  $('#view-edit-delete').hide()
+  $('#view-all-workouts').hide()
+  $('#display-workouts').hide()
 }
 
+// add workout link in navbar displays `add workout` form on page
 const onAddWorkoutBtn = function (event) {
-  event.preventDefault()
   $('#add-workout').show()
+  $('#change-password').hide()
+  $('#view-edit-delete').hide()
+  $('#view-all-workouts').hide()
+  $('#display-workouts').hide()
 }
 
-const onViewEditDeleteBtn = function (event) {
-  event.preventDefault()
+// view all workouts link in navbar displays edit and delete forms and view all
+// workouts button and logged workouts
+const onViewAllWorkoutsBtn = function (event) {
   $('#view-edit-delete').show()
+  $('#view-all-workouts').show()
+  $('#display-workouts').show()
+  $('#change-password').hide()
+  $('#add-workout').hide()
 }
-
 
 module.exports = {
   onAddWorkout,
@@ -67,5 +79,5 @@ module.exports = {
   onViewAllWorkouts,
   onChangePwBtn,
   onAddWorkoutBtn,
-  onViewEditDeleteBtn
+  onViewAllWorkoutsBtn
 }

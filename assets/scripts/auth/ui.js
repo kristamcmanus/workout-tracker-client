@@ -17,7 +17,6 @@ const onSignInSuccess = function (response) {
   setTimeout(() => {
     $('#messages').text('')
   }, 3000)
-  // $('#change-password').show()
   $('#sign-out').show()
   $('.navbar').show()
   $('#sign-up').hide()
@@ -25,11 +24,15 @@ const onSignInSuccess = function (response) {
   $('#sign-in').trigger('reset')
   $('#edit-workout').show()
   $('#delete-workout').show()
-  $('#view-all-workouts').show()
-  $('#display-workouts').show()
+  $('#view-all-workouts').hide()
+  $('#display-workouts').hide()
+  $('#view-edit-delete').hide()
 }
 
 const onChangePasswordSuccess = function () {
+  setTimeout(() => {
+    $('#messages').text('')
+  }, 3000)
   $('#messages').text('Password changed successfully!')
   $('#change-password').trigger('reset')
 }
@@ -56,11 +59,10 @@ const onSignOutSuccess = function () {
 
 // displays error message
 const onError = function (err) {
-  console.error(err)
-  $('#messages').text('Hmm...something went wrong. Please try again!')
   setTimeout(() => {
     $('#messages').text('')
   }, 3000)
+  $('#messages').text('Hmm...something went wrong. Please try again!')
 }
 
 module.exports = {
