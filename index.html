@@ -13,6 +13,10 @@
     </head>
     <body>
 
+    <!-- background image -->
+    <img src="public/sign-up-in-img.jpg" alt="runner at sunset landscape">
+
+      <!-- customized bootstrap navbar -->
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
           <h3>Workout Tracker</h3>
@@ -21,18 +25,19 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
+              <!-- `Add Workout` link in navbar -->
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#add-workout" id="add-workout-btn">Add Workout</a>
               </li>
+              <!-- `View All Workouts` link in navbar -->
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#view-all-workouts" id="view-all-workouts-btn">View All Workouts</a>
+                <a class="nav-link active" aria-current="page" href="#view-edit-delete" id="view-all-workouts-btn">View All Workouts</a>
               </li>
+              <!-- `Change Password` link in navbar -->
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#change-password" id="change-pw-btn">Change Password</a>
               </li>
+              <!-- `Sign Out` link in navbar -->
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#sign-out" type="submit" id="sign-out">Sign Out</a>
               </li>
@@ -41,21 +46,17 @@
         </div>
       </nav>
 
-      <div id="div-wrapper">
         <!-- display messages -->
         <div id="messages"></div>
-
-        <!-- sign out button -->
-        <!-- <button id="sign-out">Sign Out</button> -->
 
         <!-- sign up form -->
           <form id="sign-up">
             <h3>Sign Up</h3>
-            <label for="email">Email: </label>
+            <label for="email">Email</label>
             <input name="credentials[email]" type="email" placeholder="jdoe@gmail.com" required>
-            <label for="password">Password: </label>
+            <label for="password">Password</label>
             <input name="credentials[password]" type="password" placeholder="password" required>
-            <label for="password">Confirm Password: </label>
+            <label for="password">Confirm Password</label>
             <input name="credentials[password_confirmation]" type="password" placeholder="confirm password" required>
             <button type="submit" class="reg-button">Submit</button>
           </form>
@@ -63,9 +64,9 @@
           <!-- sign in form -->
           <form id="sign-in">
             <h3>Sign In</h3>
-            <label for="email">Email: </label>
+            <label for="email">Email</label>
             <input name="credentials[email]" type="email" placeholder="jdoe@gmail.com" required>
-            <label for="password">Password: </label>
+            <label for="password">Password</label>
             <input name="credentials[password]" type="password" placeholder="password" required>
             <button type="submit" class="reg-button">Submit</button>
           </form>
@@ -83,25 +84,22 @@
           <button type="submit">Submit</button>
         </form>
 
-        <!-- <div id="workout-btns">
-          <button id="all-workouts" class="btn">All Workouts</button>
-          <button id="add-workout-btn" class="btn">Add Workout</button>
-        </div> -->
-
+        <!-- add workout form -->
         <form id="add-workout">
           <h3>Add Workout</h3>
             <label for="workout[name]" class="form-label">Name</label>
-            <input type="text" class="form-control" name="workout[name]" id="workoutName" data-id=${workout.name} placeholder="Run" required>
+            <input type="text" name="workout[name]" id="workoutName"  placeholder="Run" required>
             <label for="workout[description]" class="form-label">Description</label>
-            <input type="text" class="form-control" name="workout[description]" id="workoutDescription" data-id=${workout.description} placeholder="Run around neighborhood" required>
+            <input type="text" name="workout[description]" id="workoutDescription" placeholder="Run on treadmill" required>
             <label for="workout[duration]" class="form-label">Duration (in minutes)</label>
-            <input type="text" class="form-control" name="workout[duration]" id="workoutDuration" data-id=${workout.duration} placeholder="45" required>
+            <input type="text" name="workout[duration]" id="workoutDuration" placeholder="45" required>
             <label for="workout[date]" class="form-label">Date</label>
-            <input type="date" class="form-control" name="workout[date]" id="workoutDate" data-id=${workout.date} placeholder="2021-04-22" required>
+            <input type="date" name="workout[date]" id="workoutDate" required>
             <button type="submit">Add Workout</button>
         </form>
 
-        <!-- <div id="view-edit-delete"> -->
+        <div id="view-edit-delete">
+        <!-- edit workout form -->
         <form id="edit-workout">
           <h3>Edit Workout</h3>
           <label for="workout[id]" class="form-label">ID</label>
@@ -113,21 +111,24 @@
           <label for="workout[duration]" class="form-label">Duration (in minutes)</label>
           <input type="text" name="workout[duration]" placeholder="Enter Duration" required>
           <label for="workout[date]" class="form-label">Date</label>
-          <input type="date" name="workout[date]" placeholder="Enter Date" required>
+          <input type="date" name="workout[date]" required>
           <button>Edit Workout</button>
         </form>
 
+        <!-- delete workout form -->
         <form id="delete-workout">
           <h3>Delete Workout</h3>
           <label for="workout[id]" class="form-label">ID</label>
-          <input type="text" class="form-control" name="workout[id]" placeholder="Enter ID" required>
+          <input type="text" name="workout[id]" placeholder="Enter ID" required>
           <button>Delete Workout</button>
         </form>
 
+        <!-- `view all workouts` button -->
         <button id="view-all-workouts">View All Workouts</button>
+
+        <!-- displays all workouts -->
         <div id="display-workouts"></div>
-      </div>
-      <!-- </div> -->
+        </div>
 
     </body>
 </html>
