@@ -26,6 +26,7 @@ const onDeleteWorkoutSuccess = function () {
     $('#messages').text('')
   }, 3000)
   $('#messages').text('Successfully deleted workout! Click View All Workouts button to view all workouts.')
+  $('.workout-item').hide()
   $('#delete-workout').trigger('reset')
 }
 
