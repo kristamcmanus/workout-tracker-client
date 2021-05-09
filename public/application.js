@@ -16658,7 +16658,6 @@ var onSignUp = function onSignUp(event) {
   event.preventDefault();
   var form = event.target;
   var formData = getFormFields(form);
-  console.log(formData);
   api.signUp(formData).then(ui.onSignUpSuccess).catch(ui.onError);
 };
 
@@ -16666,7 +16665,6 @@ var onSignIn = function onSignIn(event) {
   event.preventDefault();
   var form = event.target;
   var formData = getFormFields(form);
-  console.log(formData);
   api.signIn(formData).then(ui.onSignInSuccess).catch(ui.onError);
 };
 
@@ -17040,6 +17038,7 @@ var onDeleteWorkoutSuccess = function onDeleteWorkoutSuccess() {
     $('#messages').text('');
   }, 3000);
   $('#messages').text('Successfully deleted workout! Click View All Workouts button to view all workouts.');
+  $('.workout-item').hide();
   $('#delete-workout').trigger('reset');
 };
 
